@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="rtl">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Fast Mood</title>
+<title>Cronos Store</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
   :root{
-    --accent:#e00000;
-    --accent-2:#ff3333;
+    --accent:#7d00e0;
+    --accent-2:#9a33ff;
     --bg:#0a0a0a;
     --card:#1a1a1a;
     --text:#fff;
@@ -16,7 +16,7 @@
   }
   body.light {
     --bg:#f6f6f8; --card:#fff; --text:#111; --muted:#666;
-    --accent:#ff0a0a;
+    --accent:#7d00e0;
   }
   *{box-sizing:border-box}
   body{
@@ -53,7 +53,7 @@
   /* featured slider */
   .featured { width:100%; max-width:1200px; margin:10px auto; position:relative; overflow:hidden; border-radius:12px; }
   .slides { display:flex; transition:transform .5s ease; }
-  .slide{ min-width:100%; height:220px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:20px; background:linear-gradient(90deg, rgba(224, 0, 0, 0.8), rgba(255, 51, 51, 0.7)); }
+  .slide{ min-width:100%; height:220px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:20px; background:linear-gradient(90deg, rgba(125,0,224,0.8), rgba(154,51,255,0.7)); }
   .slide img{ max-height:200px; object-fit:contain; }
 
   /* products grid */
@@ -66,7 +66,7 @@
     background:var(--card); border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.03);
     box-shadow:0 6px 18px rgba(0,0,0,0.35); display:flex; flex-direction:column; transition:transform .18s;
   }
-  .card:hover{ transform:translateY(-6px); border-color:rgb(255, 0, 0) }
+  .card:hover{ transform:translateY(-6px); border-color:rgba(125,0,224,0.45) }
   .card img{ width:100%; height:150px; object-fit:cover; display:block; }
   .card-body{ padding:10px; flex:1; display:flex; flex-direction:column; gap:8px; }
   .card-body h4{ margin:0; font-size:15px; }
@@ -123,7 +123,7 @@
 <header>
   <div style="display:flex;align-items:center;gap:12px;">
     <img src="" id="logoImg" alt="" style="width:36px;height:36px;border-radius:8px;display:none">
-    <span> Fast Mood</span>
+    <span>Cronos Store</span>
   </div>
 </header>
 
@@ -151,20 +151,13 @@
   </div>
 </div>
 
+<!-- Featured slider -->
 <div class="featured">
   <div class="slides" id="slides">
-    <div class="slide">
-      <img src="fastmood.jpeg" alt="banner1">
-    </div>
-    <div class="slide">
-      <div style="position:relative; z-index:2; text-align:center; color:white;">
-        <h2 style="font-size:32px; font-weight:700; margin-bottom:10px;">خصم 15%</h2>
-        <p style="font-size:20px;">discord.gg/cc4</p>
-      </div>
-    </div>
+    <div class="slide"><img src="https://cdn.discordapp.com/attachments/1414253621163593738/1417144304626962452/ChatGPT_Image_Sep_15_2025_04_45_19_PM.png?ex=68c969fb&is=68c8187b&hm=89a61dc8ec0096fc40e645477a5a0c3001733c3d646a5aebb277a22087ebb414&" alt="banner1"></div>
+    <div class="slide"><img src="https://cdn.discordapp.com/attachments/1414253621163593738/1417144304626962452/ChatGPT_Image_Sep_15_2025_04_45_19_PM.png?ex=68c969fb&is=68c8187b&hm=89a61dc8ec0096fc40e645477a5a0c3001733c3d646a5aebb277a22087ebb414&" alt="banner2"></div>
   </div>
 </div>
-
 
 <!-- Main container -->
 <div class="container">
@@ -205,7 +198,7 @@
 <div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
 
 <footer>
-  © FastMood — جميع الحقوق محفوظة
+  © Cronos Store — جميع الحقوق محفوظة
 </footer>
 
 <script>
@@ -213,14 +206,14 @@
    بيانات المنتجات (منك)
    ======================== */
 const PRODUCTS = [
-    { id: 1, name: "Fast Mood ", price: 94, img:"https://cdn.discordapp.com/attachments/1415690193662513316/1417584296696352850/ChatGPT_Image_Sep_16_2025_09_53_35_PM.png?ex=68cb03c1&is=68c9b241&hm=5d4b74a606ad7aa4bf7429e9803b6196c55649c827eeaf477c818479345ed95c&",rating:4.8},
-    { id: 2, name: "Fast Mood", price: 131, img:"https://cdn.discordapp.com/attachments/1415690193662513316/1417584296696352850/ChatGPT_Image_Sep_16_2025_09_53_35_PM.png?ex=68cb03c1&is=68c9b241&hm=5d4b74a606ad7aa4bf7429e9803b6196c55649c827eeaf477c818479345ed95c&",rating:4.6},
-    { id: 3, name: "Fast Mood", price: 74, img:"https://cdn.discordapp.com/attachments/1415690193662513316/1417584296696352850/ChatGPT_Image_Sep_16_2025_09_53_35_PM.png?ex=68cb03c1&is=68c9b241&hm=5d4b74a606ad7aa4bf7429e9803b6196c55649c827eeaf477c818479345ed95c&",rating:4.2},
-    { id: 4, name: "Fast Mood", price: 74, img:"https://cdn.discordapp.com/attachments/1415690193662513316/1417584296696352850/ChatGPT_Image_Sep_16_2025_09_53_35_PM.png?ex=68cb03c1&is=68c9b241&hm=5d4b74a606ad7aa4bf7429e9803b6196c55649c827eeaf477c818479345ed95c&",rating:4.1},
-    { id: 5, name: "Fast Mood", price: 74, img:"https://cdn.discordapp.com/attachments/1415690193662513316/1417584296696352850/ChatGPT_Image_Sep_16_2025_09_53_35_PM.png?ex=68cb03c1&is=68c9b241&hm=5d4b74a606ad7aa4bf7429e9803b6196c55649c827eeaf477c818479345ed95c&",rating:3.9},
-    { id: 6, name: "Fast Mood", price: 74, img:"https://cdn.discordapp.com/attachments/1415690193662513316/1417584296696352850/ChatGPT_Image_Sep_16_2025_09_53_35_PM.png?ex=68cb03c1&is=68c9b241&hm=5d4b74a606ad7aa4bf7429e9803b6196c55649c827eeaf477c818479345ed95c&",rating:4.0},
-    { id: 7, name: "Fast Mood", price: 74, img:"https://cdn.discordapp.com/attachments/1415690193662513316/1417584296696352850/ChatGPT_Image_Sep_16_2025_09_53_35_PM.png?ex=68cb03c1&is=68c9b241&hm=5d4b74a606ad7aa4bf7429e9803b6196c55649c827eeaf477c818479345ed95c&",rating:4.3},
-    { id: 8, name: "Fast Mood", price: 85, img:"https://cdn.discordapp.com/attachments/1415690193662513316/1417584296696352850/ChatGPT_Image_Sep_16_2025_09_53_35_PM.png?ex=68cb03c1&is=68c9b241&hm=5d4b74a606ad7aa4bf7429e9803b6196c55649c827eeaf477c818479345ed95c&",rating:4.0}
+  {id:1,name:"Tweak | تويك",price:94,img:"https://cdn.discordapp.com/icons/1406600823039070229/8ce1cdf2191ca08c9897e44edbc504dd.png?size=1024",rating:4.8},
+  {id:2,name:"Windows | ويندوز مخفف",price:131,img:"https://cdn.discordapp.com/icons/1406600823039070229/8ce1cdf2191ca08c9897e44edbc504dd.png?size=1024",rating:4.6},
+  {id:3,name:"Macro | ماكرو",price:74,img:"https://cdn.discordapp.com/icons/1406600823039070229/8ce1cdf2191ca08c9897e44edbc504dd.png?size=1024",rating:4.2},
+  {id:4,name:"Fortnite Script | سكربت فورتنايت",price:74,img:"https://cdn.discordapp.com/icons/1406600823039070229/8ce1cdf2191ca08c9897e44edbc504dd.png?size=1024",rating:4.1},
+  {id:5,name:"Blackops6 Script | بلاك اوبس سكربت",price:74,img:"https://cdn.discordapp.com/icons/1406600823039070229/8ce1cdf2191ca08c9897e44edbc504dd.png?size=1024",rating:3.9},
+  {id:6,name:"Modernwarefire3 script | سكربت مودرن وير فاير 3",price:74,img:"https://cdn.discordapp.com/icons/1406600823039070229/8ce1cdf2191ca08c9897e44edbc504dd.png?size=1024",rating:4.0},
+  {id:7,name:"Overwatch Script | سكربت اوفر واتش",price:74,img:"https://cdn.discordapp.com/icons/1406600823039070229/8ce1cdf2191ca08c9897e44edbc504dd.png?size=1024",rating:4.3},
+  {id:8,name:"Perm Spoofer (soon)",price:140,img:"https://cdn.discordapp.com/icons/1406600823039070229/8ce1cdf2191ca08c9897e44edbc504dd.png?size=1024",rating:5}
 ];
 
 /* ==== عملات (قابل للتعديل) ====
@@ -233,7 +226,9 @@ const RATES = { SAR:1, USD:0.266, EUR:0.245 };
 
 /* === كوبونات === */
 const COUPONS = {
-  'FastMood':0.15,
+  'CronosWeb':0.15,
+  'Cronos10':0.10,
+  'Cronos20':0.20
 };
 
 /* ===== state and DOM refs ===== */
@@ -460,7 +455,14 @@ function addToCartAnimated(productId, btnEl){
 /* ===== toggle cart sidebar ===== */
 function toggleCart(){
   cartSidebar.classList.toggle('active');
+  const cartIcon = document.getElementById('cartIcon');
+  if(cartSidebar.classList.contains('active')){
+    cartIcon.style.display = 'none'; // أخفي الأيقونة عند فتح السلة
+  } else {
+    cartIcon.style.display = 'flex'; // أرجع الأيقونة عند الإغلاق
+  }
 }
+
 
 /* ===== product modal (simple) ===== */
 function openProductModal(id){
@@ -515,7 +517,7 @@ function drawBg(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
   particles.forEach(p=>{
     ctx.beginPath();
-    ctx.fillStyle = `rgba(224,0,0,${p.alpha})`;   // أحمر
+    ctx.fillStyle = `rgba(125,0,224,${p.alpha})`;
     ctx.ellipse(p.x, p.y, p.r, p.r, 0, 0, Math.PI*2);
     ctx.fill();
     p.x += p.vx; p.y += p.vy;
@@ -534,4 +536,3 @@ renderCart();
 </script>
 </body>
 </html>
-
